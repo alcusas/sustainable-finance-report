@@ -1,0 +1,1285 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sustainable Finance in East Africa: A Strategic Analysis for Investment Advocacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f5f5f5;
+            --accent: #059669;
+            --muted: #6b7280;
+            --earth-warm: #8b7355;
+            --earth-cool: #4a5568;
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(74, 85, 104, 0.1) 100%);
+        }
+        
+        .concave-shadow {
+            box-shadow: inset 0 -8px 16px -8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            width: 280px;
+            max-height: calc(100vh - 4rem);
+            overflow-y: auto;
+            z-index: 40;
+        }
+        
+        .content-offset {
+            margin-left: 320px;
+        }
+        
+        .citation-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.75rem;
+            vertical-align: super;
+            font-weight: 600;
+        }
+        
+        .citation-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 1024px) {
+            .toc-fixed { display: none; }
+            .content-offset { margin-left: 0; }
+        }
+        
+        .expandable-box {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .expandable-box:hover {
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+        }
+        
+        .expandable-header {
+            padding: 1.5rem;
+            background: #fafafa;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .expandable-header:hover {
+            background: #f5f5f5;
+        }
+        
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .expandable-content.expanded {
+            max-height: 1000px;
+        }
+        
+        /* Mermaid Chart Styling */
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container.zoomed .mermaid {
+            height: 100%;
+            width: 100%;
+            cursor: grab;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+    .mermaid-control-btn:active {
+        transform: scale(0.95);
+    }
+
+    @media (max-width: 1024px) {
+        .mermaid-control-btn:not(.reset-zoom) {
+            display: none;
+        }
+        .mermaid-controls {
+            top: auto;
+            bottom: 15px;
+            right: 15px;
+        }
+    }
+    </style>
+  </head>
+
+  <body class="font-body text-gray-900 bg-white">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed bg-white border border-gray-200 rounded-lg shadow-lg p-4">
+      <h3 class="font-display font-semibold text-lg mb-4 text-gray-900">Contents</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#executive-summary" class="text-gray-600 hover:text-gray-900 block py-1">Executive Summary</a>
+        </li>
+        <li>
+          <a href="#comparative-analysis" class="text-gray-600 hover:text-gray-900 block py-1">Investment Gap Analysis</a>
+        </li>
+        <li>
+          <a href="#active-funds" class="text-gray-600 hover:text-gray-900 block py-1">Financial Mechanisms</a>
+        </li>
+        <li>
+          <a href="#government-policies" class="text-gray-600 hover:text-gray-900 block py-1">Policy Frameworks</a>
+        </li>
+        <li>
+          <a href="#private-sector" class="text-gray-600 hover:text-gray-900 block py-1">Private Sector Opportunities</a>
+        </li>
+        <li>
+          <a href="#kuza-strategy" class="text-gray-600 hover:text-gray-900 block py-1">Strategic Implications</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-offset">
+      <!-- Hero Section -->
+      <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8 grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+          <!-- Title Column -->
+          <div class="lg:col-span-2">
+            <h1 class="font-display text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6">
+              <span class="italic text-gray-700">Bridging the</span>
+              <br/>
+              <span class="text-gray-900">$9 Billion Gap</span>
+              <br/>
+              <span class="text-gray-600 text-2xl md:text-3xl lg:text-4xl font-normal">in East African Sustainable Finance</span>
+            </h1>
+            <p class="text-base md:text-xl text-gray-600 leading-relaxed max-w-2xl">
+              A comprehensive comparative analysis of investment gaps, financial mechanisms, and strategic opportunities across Kenya, Rwanda, and Uganda for sustainable development advocacy.
+            </p>
+          </div>
+
+          <!-- Visual Element -->
+          <div class="relative">
+            <div class="bg-white p-4 md:p-8 rounded-2xl shadow-xl border border-gray-200">
+              <img src="https://kimi-web-img.moonshot.cn/img/iea.imgix.net/b655fa8e65d487ad5902c3515ee716df7d306234.jpg" alt="Renewable energy projects across East Africa" class="w-full h-48 md:h-64 object-cover rounded-lg mb-4 md:mb-6" size="medium" aspect="wide" color="green" style="photo" query="East Africa renewable energy landscape" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+              <div class="grid grid-cols-3 gap-2 md:gap-4 text-center">
+                <div>
+                  <div class="text-lg md:text-2xl font-bold text-gray-900">$5.1B</div>
+                  <div class="text-xs md:text-sm text-gray-600">Kenya Annual Gap</div>
+                </div>
+                <div>
+                  <div class="text-lg md:text-2xl font-bold text-gray-900">$2.8B</div>
+                  <div class="text-xs md:text-sm text-gray-600">Uganda Annual Gap</div>
+                </div>
+                <div>
+                  <div class="text-lg md:text-2xl font-bold text-gray-900">$1.0B</div>
+                  <div class="text-xs md:text-sm text-gray-600">Rwanda Annual Gap</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Executive Summary</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+            <div>
+              <h3 class="font-display text-2xl font-semibold mb-6">Investment Landscape Overview</h3>
+              <p class="text-gray-700 leading-relaxed mb-6">
+                The East African nations of Kenya, Rwanda, and Uganda face a substantial and urgent need for sustainable finance, with collective annual investment gaps exceeding <strong>$9 billion</strong>. While Kenya presents the largest absolute market, Rwanda faces the most significant challenge relative to its economic size.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                All three countries are actively developing policy frameworks, such as green taxonomies and national climate finance strategies, to attract capital. The private sector is increasingly seen as a critical partner, with growing opportunities in renewable energy, sustainable agriculture, and innovative financing tools.
+              </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h4 class="font-display text-xl font-semibold mb-4">Key Investment Gaps</h4>
+              <div class="space-y-4">
+                <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span class="font-medium">Kenya</span>
+                  <span class="font-bold text-gray-900">$5.13B annually</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span class="font-medium">Uganda</span>
+                  <span class="font-bold text-gray-900">$2.8B annually</span>
+                </div>
+                <div class="flex justify-between items-center py-2 border-b border-gray-100">
+                  <span class="font-medium">Rwanda</span>
+                  <span class="font-bold text-gray-900">$1.0B annually</span>
+                </div>
+                <div class="flex justify-between items-center py-2 font-bold text-lg">
+                  <span>Total Regional Gap</span>
+                  <span class="text-gray-900">$8.93B annually</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expandable Summary Boxes -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="expandable-box">
+              <div class="expandable-header flex justify-between items-center" onclick="toggleExpand(&#39;financing-mechanisms&#39;)">
+                <h4 class="font-display text-xl font-semibold">Active Financial Mechanisms</h4>
+                <i class="fas fa-chevron-down transition-transform duration-300" id="financing-mechanisms-icon"></i>
+              </div>
+              <div class="expandable-content" id="financing-mechanisms-content">
+                <div class="p-6 bg-white">
+                  <p class="text-gray-700 mb-4">
+                    Development Finance Institutions (DFIs) provide 43% of total climate finance flows ($19 billion) to Africa <a href="https://www.climatepolicyinitiative.org/wp-content/uploads/2024/10/Landscape-of-Climate-Finance-in-Africa-2024.pdf" class="citation-link" target="_blank">[117]</a>. The region features:
+                  </p>
+                  <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li>National climate funds like Rwanda&#39;s FONERWA</li>
+                    <li>Innovative tools including Sustainability-Linked Bonds (SLBs)</li>
+                    <li>Blended finance approaches combining public and private capital</li>
+                    <li>USAID Kenya Investment Mechanism mobilizing private capital <a href="https://africa.wri.org/sites/default/files/2024-09/unlocking-local-private-capital-finance-productive-use-renewable-energy-pure-sector.pdf" class="citation-link" target="_blank">[116]</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="expandable-box">
+              <div class="expandable-header flex justify-between items-center" onclick="toggleExpand(&#39;policy-frameworks&#39;)">
+                <h4 class="font-display text-xl font-semibold">Government Policy Frameworks</h4>
+                <i class="fas fa-chevron-down transition-transform duration-300" id="policy-frameworks-icon"></i>
+              </div>
+              <div class="expandable-content" id="policy-frameworks-content">
+                <div class="p-6 bg-white">
+                  <p class="text-gray-700 mb-4">
+                    Comprehensive frameworks are being developed across the region:
+                  </p>
+                  <ul class="list-disc list-inside text-gray-700 space-y-2">
+                    <li><strong>Kenya:</strong> Green Finance Taxonomy and Climate Action Plan <a href="https://wwfke.awsassets.panda.org/downloads/sustainable-fiannce--report-2024.pdf" class="citation-link" target="_blank">[140]</a>
+                    </li>
+                    <li><strong>Uganda:</strong> National Climate Finance Strategy <a href="https://gggi.org/uganda-launches-national-climate-finance-strategy-to-accelerate-green-growth-and-climate-resilience/" class="citation-link" target="_blank">[22]</a>
+                    </li>
+                    <li><strong>Rwanda:</strong> Green Taxonomy and $6.2B Climate and Nature Finance Strategy <a href="https://allafrica.com/stories/202411150067.html" class="citation-link" target="_blank">[81]</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Comparative Analysis -->
+      <section id="comparative-analysis" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Investment Gap Analysis</h2>
+
+          <!-- Investment Gap Visualization -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Annual Investment Requirements</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                  <div class="text-4xl font-bold text-gray-900 mb-2">$5.1B</div>
+                  <div class="text-lg font-medium text-gray-700">Kenya</div>
+                  <div class="text-sm text-gray-600 mt-2">~3.77% of GDP</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                  <div class="text-4xl font-bold text-gray-900 mb-2">$2.8B</div>
+                  <div class="text-lg font-medium text-gray-700">Uganda</div>
+                  <div class="text-sm text-gray-600 mt-2">~4.31% of GDP</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                  <div class="text-4xl font-bold text-gray-900 mb-2">$1.0B</div>
+                  <div class="text-lg font-medium text-gray-700">Rwanda</div>
+                  <div class="text-sm text-gray-600 mt-2">~6.76% of GDP</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regional Context -->
+          <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-lg">
+            <h3 class="font-display text-2xl font-semibold mb-6">Regional Context</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  East Africa faces a massive collective challenge, with average climate investment gaps reaching <strong>23% of GDP</strong> regionally <a href="https://fsdafrica.org/wp-content/uploads/2025/05/1.-Landscape-of-Climate-Finance-in-Africa-l-Full-report.pdf" class="citation-link" target="_blank">[134]</a>. This starkly illustrates the scale of intervention required beyond national borders.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                  The three countries analyzed represent leadership in defining and addressing climate finance needs, though their combined gaps still fall significantly below the regional average, indicating opportunities for more comprehensive strategies.
+                </p>
+              </div>
+              <div class="flex items-center justify-center">
+                <img src="https://kimi-web-img.moonshot.cn/img/placeholder-0620/%E5%9B%BE%E7%89%872.png" alt="African leaders discussing renewable energy projects" class="w-full max-w-md h-48 object-cover rounded-lg shadow-md" size="medium" aspect="wide" style="photo" query="East Africa renewable energy cooperation" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Active Funds and Financial Mechanisms -->
+      <section id="active-funds" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Financial Mechanisms</h2>
+
+          <!-- Kenya's Financial Landscape -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Kenya: Diversified Sources with Public Dominance</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">International Public Institutions</h4>
+                  <p class="text-gray-700 mb-4">
+                    International public institutions provide <strong>60%</strong> of climate finance in Kenya, amounting to KES 146.2 billion annually, primarily through concessional loans <a href="https://wwfke.awsassets.panda.org/downloads/sustainable-fiannce--report-2024.pdf" class="citation-link" target="_blank">[140]</a>.
+                  </p>
+                  <h4 class="font-semibold text-lg mb-4 mt-6">Private Sector Participation</h4>
+                  <p class="text-gray-700">
+                    Private sector contribution remains modest at <strong>15%</strong> (KES 36.7 billion), highlighting significant untapped potential for commercial investment.
+                  </p>
+                </div>
+                <div>
+                  <div class="bg-blue-50 p-6 rounded-lg">
+                    <h5 class="font-medium mb-3">Mitigation vs. Adaptation Funding</h5>
+                    <div class="space-y-3">
+                      <div>
+                        <div class="flex justify-between mb-1">
+                          <span class="text-sm">Mitigation (79%)</span>
+                          <span class="text-sm font-medium">KES 192.2B</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                          <div class="bg-blue-600 h-2 rounded-full" style="width: 79%"></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="flex justify-between mb-1">
+                          <span class="text-sm">Adaptation (12%)</span>
+                          <span class="text-sm font-medium">KES 29.2B</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                          <div class="bg-green-600 h-2 rounded-full" style="width: 12%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rwanda's Innovative Financing -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Rwanda: Pioneering Innovation</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-green-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">Rwanda Green Fund (FONERWA)</h4>
+                  <p class="text-gray-700 text-sm">
+                    Primary vehicle for implementing climate and environment policy, mobilizing $6.2B by 2030 <a href="https://allafrica.com/stories/202411150067.html" class="citation-link" target="_blank">[81]</a>.
+                  </p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">Sustainability-Linked Bonds</h4>
+                  <p class="text-gray-700 text-sm">
+                    BRD issued East Africa&#39;s first SLB in September 2023, linking financial terms to ESG targets <a href="https://www.worldbank.org/en/news/feature/2024/11/14/pioneering-sustainable-and-inclusive-finance" class="citation-link" target="_blank">[141]</a>.
+                  </p>
+                </div>
+                <div class="p-6 bg-green-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">Blended Finance</h4>
+                  <p class="text-gray-700 text-sm">
+                    Strategic combination of public, philanthropic, and private capital to de-risk investments and scale impact.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uganda's Strategic Approach -->
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="font-display text-2xl font-semibold mb-6">Uganda: Strategic Partnerships</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-lg mb-4">Uganda Development Bank Climate Finance Facility</h4>
+                <p class="text-gray-700 mb-4">
+                  UDB&#39;s dedicated facility mobilizes resources for green investments, focusing on climate-smart agriculture, low-carbon industries, and clean energy <a href="https://african.business/2024/02/partner-content/uganda-development-bank-on-a-mission-to-support-green-projects-and-attract-international-investors" class="citation-link" target="_blank">[109]</a>.
+                </p>
+                <h4 class="font-semibold text-lg mb-4 mt-6">Green Climate Fund Partnership</h4>
+                <p class="text-gray-700">
+                  UDB pursuing GCF accreditation to access concessional funding for scaling climate action.
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg mb-4">AfDB Partnership Impact</h4>
+                <div class="bg-yellow-50 p-6 rounded-lg">
+                  <div class="text-center">
+                    <div class="text-3xl font-bold text-gray-900 mb-2">$189.6M</div>
+                    <div class="text-sm text-gray-600">AfDB mobilized for African climate programs since 2018 <a href="https://www.afdb.org/en/topics-and-sectors/initiatives-partnerships/green-climate-fund" class="citation-link" target="_blank">[110]</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 text-sm text-gray-600">
+                  <p>Partnership with African Guarantee Fund provides UGX 16 Billion (approx. USD 5 million) loan portfolio guarantee for SMEs, women, and youth-affiliated businesses <a href="https://africanguaranteefund.com/african-guarantee-fund-partners-with-uganda-development-bank-to-scale-up-sustainable-lending-to-smes-women-and-youth-affiliated-businesses/" class="citation-link" target="_blank">[111]</a>.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Government Policies -->
+      <section id="government-policies" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Government Policy Frameworks</h2>
+
+          <!-- Policy Integration Diagram -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-8 text-center">Policy Framework Integration</h3>
+              <div class="mermaid-container">
+                <div class="mermaid-controls">
+                  <button class="mermaid-control-btn zoom-in" title="放大">
+                    <i class="fas fa-search-plus"></i>
+                  </button>
+                  <button class="mermaid-control-btn zoom-out" title="缩小">
+                    <i class="fas fa-search-minus"></i>
+                  </button>
+                  <button class="mermaid-control-btn reset-zoom" title="重置">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                  </button>
+                  <button class="mermaid-control-btn fullscreen" title="全屏查看">
+                    <i class="fas fa-expand"></i>
+                  </button>
+                </div>
+                <div class="mermaid" id="policy-diagram">
+                  graph TB
+                  A[&#34;East African Community&#34;] --&gt; B[&#34;Regional Green Taxonomy&#34;]
+                  A --&gt; C[&#34;Harmonized Standards&#34;]
+
+                  D[&#34;Kenya&#34;] --&gt; E[&#34;National Climate Change Action Plan
+                  <br/>$29B 2023-2027&#34;]
+                  D --&gt; F[&#34;Green Finance Taxonomy&#34;]
+                  D --&gt; G[&#34;Carbon Markets Regulations&#34;]
+
+                  H[&#34;Uganda&#34;] --&gt; I[&#34;National Climate Finance Strategy&#34;]
+                  H --&gt; J[&#34;Climate Integration in Investment Policies&#34;]
+
+                  K[&#34;Rwanda&#34;] --&gt; L[&#34;National Climate &amp; Nature Finance Strategy
+                  <br/>$6.2B by 2030&#34;]
+                  K --&gt; M[&#34;Operational Green Taxonomy&#34;]
+
+                  B --&gt; N[&#34;Coordinated Regional Approach&#34;]
+                  C --&gt; N
+                  E --&gt; N
+                  I --&gt; N
+                  L --&gt; N
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kenya's Framework -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Kenya: Comprehensive Policy Leadership</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-blue-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">National Climate Change Action Plan</h4>
+                  <p class="text-gray-700 text-sm mb-2">
+                    2023-2027 plan with $29B financing requirement over five years <a href="https://wwfke.awsassets.panda.org/downloads/sustainable-fiannce--report-2024.pdf" class="citation-link" target="_blank">[140]</a>.
+                  </p>
+                  <div class="text-2xl font-bold text-blue-600">$29B</div>
+                  <div class="text-xs text-gray-600">5-year requirement</div>
+                </div>
+                <div class="p-6 bg-green-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">Green Finance Taxonomy</h4>
+                  <p class="text-gray-700 text-sm mb-2">
+                    Classification system for defining green investments, developed by Kenya Bankers Association.
+                  </p>
+                </div>
+                <div class="p-6 bg-purple-50 rounded-lg">
+                  <h4 class="font-semibold mb-3">Carbon Markets Regulations</h4>
+                  <p class="text-gray-700 text-sm mb-2">
+                    May 2024 regulations providing legal framework for carbon project development <a href="https://wwfke.awsassets.panda.org/downloads/sustainable-fiannce--report-2024.pdf" class="citation-link" target="_blank">[85]</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Uganda's Strategy -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Uganda: Strategic Integration</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">National Climate Finance Strategy</h4>
+                  <p class="text-gray-700 mb-4">
+                    Comprehensive plan for mobilizing resources to implement NDCs and achieve national development goals <a href="https://gggi.org/uganda-launches-national-climate-finance-strategy-to-accelerate-green-growth-and-climate-resilience/" class="citation-link" target="_blank">[22]</a>.
+                  </p>
+                  <h4 class="font-semibold text-lg mb-4 mt-6">Climate Integration Focus</h4>
+                  <p class="text-gray-700">
+                    Emphasis on integrating climate change into national and sectoral investment policies to ensure all public and private investment is climate-resilient and low-carbon.
+                  </p>
+                </div>
+                <div>
+                  <img src="https://kimi-web-img.moonshot.cn/img/placeholder-0620/%E5%9B%BE%E7%89%8717.png" alt="Ugandan government officials discussing renewable energy policy" class="w-full h-64 object-cover rounded-lg shadow-md" size="medium" aspect="wide" style="photo" query="Uganda government renewable energy" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rwanda's Leadership -->
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="font-display text-2xl font-semibold mb-6">Rwanda: Forward-Looking Innovation</h3>
+            <div class="bg-gradient-to-r from-green-50 to-purple-50 p-8 rounded-lg">
+              <h4 class="font-display text-xl font-semibold mb-4">National Climate and Nature Finance Strategy</h4>
+              <p class="text-gray-700 mb-6">
+                Launched at COP29, this strategy aims to mobilize <strong>$6.2 billion</strong> by 2030 for climate and biodiversity initiatives <a href="https://allafrica.com/stories/202411150067.html" class="citation-link" target="_blank">[81]</a>. The comprehensive approach includes:
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-green-600 mb-2">$6.2B</div>
+                  <div class="text-sm text-gray-600">Target by 2030</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-purple-600 mb-2">2050</div>
+                  <div class="text-sm text-gray-600">Carbon Neutrality Goal</div>
+                </div>
+                <div class="text-center">
+                  <div class="text-3xl font-bold text-blue-600 mb-2">Active</div>
+                  <div class="text-sm text-gray-600">Green Taxonomy</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Private Sector Opportunities -->
+      <section id="private-sector" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Private Sector Participation and Opportunities</h2>
+
+          <!-- Banking Sector Trends -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Banking Sector Transformation</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">ESG-Based Lending Adoption</h4>
+                  <p class="text-gray-700 mb-4">
+                    Banks across the region increasingly incorporate green banking principles, driven by regulatory pressure and growing investor demand for sustainable investments <a href="https://sfi.kba.co.ke/uploads/KBA-SFI-Guiding-Principles-19112024.pdf" class="citation-link" target="_blank">[127]</a>.
+                  </p>
+                  <h4 class="font-semibold text-lg mb-4 mt-6">Reporting Requirements</h4>
+                  <p class="text-gray-700">
+                    National Bank of Rwanda requires integrated annual reports covering social, environmental, and economic impacts <a href="https://kifc.rw/wp-content/uploads/2023/01/KIFCSustainableFinanceRoadmap.pdf" class="citation-link" target="_blank">[80]</a>.
+                  </p>
+                </div>
+                <div>
+                  <div class="bg-yellow-50 p-6 rounded-lg">
+                    <h5 class="font-medium mb-4">Key Challenges</h5>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 text-sm">
+                      <li>Lack of reliable ESG performance data</li>
+                      <li>Insufficient capacity for ESG risk assessment</li>
+                      <li>Need for standardized reporting frameworks</li>
+                      <li>Limited pipeline of bankable green projects</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Investment Landscape -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Impact Investment Hub</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h4 class="font-semibold text-lg mb-4">Kenya&#39;s Market Leadership</h4>
+                  <p class="text-gray-700 mb-4">
+                    Kenya has emerged as the regional hub for impact investment, with green entrepreneurship offering a <strong>$123 billion</strong> market opportunity <a href="https://wwfke.awsassets.panda.org/downloads/sustainable-fiannce--report-2024.pdf" class="citation-link" target="_blank">[85]</a>.
+                  </p>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <div class="text-2xl font-bold text-blue-600 mb-1">$123B</div>
+                    <div class="text-sm text-gray-600">Market opportunity in Kenya</div>
+                  </div>
+                  <h4 class="font-semibold text-lg mb-4 mt-6">Sector Focus</h4>
+                  <p class="text-gray-700">
+                    Energy and financial services attract most impact investment, with off-grid solar companies providing clean energy to millions.
+                  </p>
+                </div>
+                <div>
+                  <img src="https://kimi-web-img.moonshot.cn/img/ucarecdn.com/ee302b19cff397c9e6ee9f1a67f22edc9f676e23.png" alt="Off-grid solar energy installation in Kenya" class="w-full h-64 object-cover rounded-lg shadow-md" size="medium" aspect="wide" style="photo" query="Off-grid solar installation Kenya" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- High-Potential Sectors -->
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h3 class="font-display text-2xl font-semibold mb-8">High-Potential Investment Sectors</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Renewable Energy -->
+              <div class="p-6 bg-gradient-to-b from-green-50 to-green-100 rounded-lg">
+                <div class="text-center mb-4">
+                  <i class="fas fa-solar-panel text-4xl text-green-600 mb-3"></i>
+                  <h4 class="font-semibold text-lg">Renewable Energy</h4>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  Massive market for off-grid and mini-grid solutions, with abundant solar, wind, and geothermal resources.
+                </p>
+                <div class="text-xs text-gray-600">
+                  <strong>Opportunities:</strong> Solar home systems, mini-grids, energy-efficient appliances
+                </div>
+              </div>
+
+              <!-- Sustainable Agriculture -->
+              <div class="p-6 bg-gradient-to-b from-yellow-50 to-yellow-100 rounded-lg">
+                <div class="text-center mb-4">
+                  <i class="fas fa-seedling text-4xl text-yellow-600 mb-3"></i>
+                  <h4 class="font-semibold text-lg">Sustainable Agriculture</h4>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  Growing demand for climate-smart technologies to improve productivity and resilience.
+                </p>
+                <div class="text-xs text-gray-600">
+                  <strong>Opportunities:</strong> Drought-resistant seeds, efficient irrigation, digital platforms
+                </div>
+              </div>
+
+              <!-- Productive Use of Renewable Energy -->
+              <div class="p-6 bg-gradient-to-b from-blue-50 to-blue-100 rounded-lg">
+                <div class="text-center mb-4">
+                  <i class="fas fa-industry text-4xl text-blue-600 mb-3"></i>
+                  <h4 class="font-semibold text-lg">PURE Applications</h4>
+                </div>
+                <p class="text-gray-700 text-sm mb-4">
+                  Using renewable energy for productive activities like irrigation and agro-processing.
+                </p>
+                <div class="text-xs text-gray-600">
+                  <strong>Opportunities:</strong> Solar-powered irrigation, cold storage, processing equipment
+                </div>
+              </div>
+            </div>
+
+            <!-- PURE Sector Financing Need -->
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-semibold text-lg mb-4">Productive Use of Renewable Energy (PURE) Financing Gap</h4>
+              <p class="text-gray-700 mb-4">
+                70% of local financial institutions identify agriculture as preferred sector for PURE expansion, with collective need for <strong>$174 million</strong> to scale operations <a href="https://africa.wri.org/sites/default/files/2024-09/unlocking-local-private-capital-finance-productive-use-renewable-energy-pure-sector.pdf" class="citation-link" target="_blank">[116]</a>.
+              </p>
+              <div class="bg-white p-4 rounded-lg text-center">
+                <div class="text-3xl font-bold text-gray-900 mb-1">$174M</div>
+                <div class="text-sm text-gray-600">Required for PURE scaling</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Strategic Implications for Kuza Green -->
+      <section id="kuza-strategy" class="py-16">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <h2 class="font-display text-4xl font-bold mb-12 text-center">Strategic Implications for Kuza Green</h2>
+
+          <!-- Current Strengths -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Current Focus and Strengths</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-green-50 rounded-lg text-center">
+                  <i class="fas fa-tractor text-4xl text-green-600 mb-4"></i>
+                  <h4 class="font-semibold mb-3">Rural Agriculture Focus</h4>
+                  <p class="text-gray-700 text-sm">
+                    Deep expertise in supporting agripreneurs and promoting climate-smart agricultural practices.
+                  </p>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-lg text-center">
+                  <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+                  <h4 class="font-semibold mb-3">Digital Solutions</h4>
+                  <p class="text-gray-700 text-sm">
+                    Technology platforms improving agricultural value chain efficiency and farmer empowerment.
+                  </p>
+                </div>
+                <div class="p-6 bg-purple-50 rounded-lg text-center">
+                  <i class="fas fa-handshake text-4xl text-purple-600 mb-4"></i>
+                  <h4 class="font-semibold mb-3">Climate Finance Experience</h4>
+                  <p class="text-gray-700 text-sm">
+                    Proven track record with USAID Kuza project and established partner networks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Strategic Positioning -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Strategic Positioning by Country</h3>
+              <div class="space-y-8">
+                <!-- Kenya Strategy -->
+                <div class="border-l-4 border-green-500 pl-6">
+                  <h4 class="font-semibold text-lg mb-3">Kenya: Leverage Market Leadership</h4>
+                  <p class="text-gray-700 mb-4">
+                    Capitalize on Kenya&#39;s position as regional hub for sustainable finance and impact investment. Focus on partnerships with growing impact investors and financial institutions active in the agricultural sector.
+                  </p>
+                  <div class="bg-green-50 p-4 rounded-lg">
+                    <strong>Key Opportunities:</strong> Impact investment partnerships, digital agriculture innovation, established financial market access
+                  </div>
+                </div>
+
+                <!-- Rwanda Strategy -->
+                <div class="border-l-4 border-blue-500 pl-6">
+                  <h4 class="font-semibold text-lg mb-3">Rwanda: Pilot Innovative Mechanisms</h4>
+                  <p class="text-gray-700 mb-4">
+                    Address high proportional investment gap by developing and piloting innovative financing mechanisms. Government&#39;s proactive approach creates fertile ground for blended finance and sustainability-linked bonds.
+                  </p>
+                  <div class="bg-blue-50 p-4 rounded-lg">
+                    <strong>Key Opportunities:</strong> Blended finance structures, SLBs, partnership with FONERWA, measurable impact demonstration
+                  </div>
+                </div>
+
+                <!-- Uganda Strategy -->
+                <div class="border-l-4 border-yellow-500 pl-6">
+                  <h4 class="font-semibold text-lg mb-3">Uganda: Align with National Strategy</h4>
+                  <p class="text-gray-700 mb-4">
+                    Tap into Uganda&#39;s mid-term National Climate Finance Strategy. Align programs with strategy priorities and partner with key implementation institutions like Uganda Development Bank.
+                  </p>
+                  <div class="bg-yellow-50 p-4 rounded-lg">
+                    <strong>Key Opportunities:</strong> Climate-smart agriculture alignment, UDB partnership, PURE sector development
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collaboration and Pilot Testing -->
+          <div class="mb-16">
+            <div class="bg-white p-8 rounded-xl shadow-lg">
+              <h3 class="font-display text-2xl font-semibold mb-6">Collaboration and Pilot Testing Areas</h3>
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="p-6 bg-gradient-to-b from-green-50 to-green-100 rounded-lg">
+                  <h4 class="font-semibold mb-3">National Green Fund Partnerships</h4>
+                  <p class="text-gray-700 text-sm mb-4">
+                    Partner with Rwanda&#39;s FONERWA for co-financing projects and developing new financial instruments.
+                  </p>
+                  <ul class="text-xs text-gray-600 space-y-1">
+                    <li>• Co-financing opportunities</li>
+                    <li>• Expertise sharing</li>
+                    <li>• New instrument development</li>
+                  </ul>
+                </div>
+
+                <div class="p-6 bg-gradient-to-b from-blue-50 to-blue-100 rounded-lg">
+                  <h4 class="font-semibold mb-3">DFI and Impact Investor Collaboration</h4>
+                  <p class="text-gray-700 text-sm mb-4">
+                    Access larger capital pools and expertise through partnerships with development finance institutions.
+                  </p>
+                  <ul class="text-xs text-gray-600 space-y-1">
+                    <li>• Blended finance structures</li>
+                    <li>• Technical assistance</li>
+                    <li>• Knowledge sharing</li>
+                  </ul>
+                </div>
+
+                <div class="p-6 bg-gradient-to-b from-purple-50 to-purple-100 rounded-lg">
+                  <h4 class="font-semibold mb-3">Innovative Finance Piloting</h4>
+                  <p class="text-gray-700 text-sm mb-4">
+                    Pilot sustainability-linked bonds linking financial performance to social and environmental impact.
+                  </p>
+                  <ul class="text-xs text-gray-600 space-y-1">
+                    <li>• SLB structuring</li>
+                    <li>• Performance-linked returns</li>
+                    <li>• New funding flexibility</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Advocacy Strategy -->
+          <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-xl shadow-lg">
+            <h3 class="font-display text-2xl font-semibold mb-6">Advocacy and Investment Attraction Strategy</h3>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold text-lg mb-4">Highlight Investment Gap Significance</h4>
+                <p class="text-gray-700 mb-4">
+                  Use regional analysis to demonstrate urgent need for increased investment in sustainable agriculture, quantifying the $9 billion collective gap and its implications for food security and climate resilience.
+                </p>
+                <h4 class="font-semibold text-lg mb-4 mt-6">Showcase Successful Models</h4>
+                <p class="text-gray-700">
+                  Demonstrate commercial viability of sustainable agriculture through success stories from supported farmers and businesses, highlighting measurable impact and financial returns.
+                </p>
+              </div>
+              <div>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                  <h5 class="font-medium mb-3">Emphasize Digital Innovation</h5>
+                  <p class="text-gray-700 text-sm mb-4">
+                    Highlight digital technology&#39;s role in scaling impact through improved agricultural value chain efficiency and farmer empowerment.
+                  </p>
+                  <div class="flex items-center space-x-4 text-sm">
+                    <div class="text-center">
+                      <div class="font-bold text-blue-600">Digital</div>
+                      <div class="text-gray-600">Solutions</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-gray-400"></i>
+                    <div class="text-center">
+                      <div class="font-bold text-green-600">Scalable</div>
+                      <div class="text-gray-600">Impact</div>
+                    </div>
+                    <i class="fas fa-arrow-right text-gray-400"></i>
+                    <div class="text-center">
+                      <div class="font-bold text-purple-600">Investment</div>
+                      <div class="text-gray-600">Returns</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 md:px-8">
+          <div class="text-center">
+            <h3 class="font-display text-2xl font-bold mb-4">Sustainable Finance in East Africa</h3>
+            <p class="text-gray-300 mb-6 max-w-2xl mx-auto">
+              This analysis provides the foundation for strategic investment decisions and advocacy efforts to bridge the critical $9 billion sustainable finance gap across Kenya, Rwanda, and Uganda.
+            </p>
+            <div class="flex justify-center space-x-8 text-sm text-gray-400">
+              <div>
+                <div class="font-semibold">Total Regional Gap</div>
+                <div>$8.93 Billion Annually</div>
+              </div>
+              <div>
+                <div class="font-semibold">Countries Analyzed</div>
+                <div>Kenya, Rwanda, Uganda</div>
+              </div>
+              <div>
+                <div class="font-semibold">Key Sectors</div>
+                <div>Renewable Energy, Agriculture</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#f5f5f5',
+                primaryTextColor: '#1f2937',
+                primaryBorderColor: '#6b7280',
+                lineColor: '#6b7280',
+                secondaryColor: '#e5e7eb',
+                secondaryTextColor: '#1f2937',
+                secondaryBorderColor: '#6b7280',
+                tertiaryColor: '#ffffff',
+                tertiaryTextColor: '#1f2937',
+                tertiaryBorderColor: '#6b7280',
+                background: '#ffffff',
+                mainBkg: '#f5f5f5',
+                secondBkg: '#e5e7eb',
+                tertiaryBkg: '#ffffff',
+                nodeBorder: '#6b7280',
+                clusterBkg: '#f9fafb',
+                defaultLinkColor: '#6b7280',
+                titleColor: '#1f2937',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#1f2937'
+            },
+            flowchart: {
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 80,
+                diagramPadding: 20
+            },
+            fontFamily: 'Inter, sans-serif',
+            fontSize: 14
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Expandable content functionality
+        function toggleExpand(id) {
+            const content = document.getElementById(id + '-content');
+            const icon = document.getElementById(id + '-icon');
+            
+            content.classList.toggle('expanded');
+            icon.style.transform = content.classList.contains('expanded') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.toc-fixed a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('font-semibold', 'text-gray-900');
+                link.classList.add('text-gray-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-gray-600');
+                    link.classList.add('font-semibold', 'text-gray-900');
+                }
+            });
+        });
+
+        // Initialize Mermaid controls after DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+    </script>
+  
+
+</body></html>
